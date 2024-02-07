@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Arimo } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const arimo = Arimo({ 
+  subsets: ["latin"], 
+  display: 'swap',
+  variable: '--font-arimo',
+});
+
+const basement = localFont({ 
+  src: '../fonts/BasementGrotesque.otf',  
+  display: 'swap',
+  variable: '--font-basement', 
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body className={`${arimo.className} ${arimo.variable} ${basement.className} ${basement.variable}`}>
         <Providers>
             {children}
         </Providers>

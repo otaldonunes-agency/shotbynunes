@@ -10,6 +10,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        arimo: ["var(--font-arimo)"],
+        basement: ["var(--font-basement)"],
+      }
     },
   },
   plugins: [nextui()],

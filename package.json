@@ -11,6 +11,8 @@
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
     "@prisma/client": "5.9.1",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.0.49",
     "@studio-freight/hamo": "^0.6.28",
     "@studio-freight/react-lenis": "^0.0.43",
     "better-sqlite3": "^9.4.0",
