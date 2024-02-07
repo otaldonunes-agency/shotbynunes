@@ -9,13 +9,13 @@ export default function Home() {
     <div className="top-1/2 left-1/2 absolute transform -translate-x-1/2 -translate-y-1/2">
       <h1 className="text-white flex flex-col items-center justify-center subpixel-antialiased font-basement">
         <div className="flex items-end justify-center">
-          <span className="text-9xl tracking-widest subpixel-antialiased">Shot</span>
-          <span className="text-7xl tracking-wider subpixel-antialiased">by</span>
+          <span className="text-9xl tracking-widest subpixel-antialiased ">Shot</span>
+          <span className="text-7xl tracking-wider subpixel-antialiased ">by</span>
         </div>
-        <span className="text-9xl tracking-tight subpixel-antialiased">NUNES</span>
+        <span className="text-9xl tracking-tight subpixel-antialiased ">NUNES</span>
       </h1>
     </div>
-    <SplineContainer scene="https://prod.spline.design/y6-mhzXk1fhkwQxv/scene.splinecode" className="w-screen h-screen"/>
+    <SplineContainer scene="https://prod.spline.design/OPamddMF-oZW4QAC/scene.splinecode" className="w-screen h-screen"/>
    </div>
     
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
