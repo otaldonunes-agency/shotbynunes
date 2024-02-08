@@ -1,22 +1,32 @@
+import { NavBar } from "@/components/NavBar";
 import { SplineContainer } from "@/components/SplineContainer";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Home() {
+
   return (
     <>
+    <NavBar/>
    <div className="relative">
     <div className="top-1/2 left-1/2 absolute transform -translate-x-1/2 -translate-y-1/2">
+    <Link href="/teste" className="pointer">
       <h1 className="text-white flex flex-col items-center justify-center subpixel-antialiased font-basement">
         <div className="flex items-end justify-center">
           <span className="text-9xl tracking-widest subpixel-antialiased ">Shot</span>
           <span className="text-7xl tracking-wider subpixel-antialiased ">by</span>
         </div>
         <span className="text-9xl tracking-tight subpixel-antialiased ">NUNES</span>
-      </h1>
+      </h1></Link>
     </div>
-    <SplineContainer scene="https://prod.spline.design/OPamddMF-oZW4QAC/scene.splinecode" className="w-screen h-screen"/>
+    <div id="home">
+    <SplineContainer scene="https://prod.spline.design/2D5u1XflQQYlNbbr/scene.splinecode" className="w-screen h-screen"/>
+    </div>
    </div>
+   <div id="sobre">
+    <SplineContainer scene="https://prod.spline.design/Ox3cyIQ0STi1n4bu/scene.splinecode" className="w-screen h-screen"/>
+    </div>
     
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
