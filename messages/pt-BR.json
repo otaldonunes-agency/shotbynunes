@@ -1,0 +1,5 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "currentLanguageTag": "Lingua selecionada é \"{languageTag}\".",
+  "greeting": "Bem vindo(a) {name}!Você tem {count} mensagens."
+}
