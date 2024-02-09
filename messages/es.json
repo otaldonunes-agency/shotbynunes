@@ -2,9 +2,9 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "currentLanguageTag": "la lingua selecionada es: \"{languageTag}\".",
   "greeting": "bien venido {name}! tu tens {count} menssagens.",
-  "menuItemOne": "Home",
+  "menuItemOne": "Homi",
   "menuItemTwo": "Trabajos",
-  "menuItemThree": "Sobre",
+  "menuItemThree": "Sobres",
   "menuItemFour": "Equipa",
   "menuItemFive": "Contacto"
 }
