@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import { Arimo } from "next/font/google";
-import localFont from 'next/font/local'
-import "./globals.css";
-import { availableLanguageTags, languageTag } from "@/paraglide/runtime"
+import "../globals.css";
+import { availableLanguageTags } from "@/paraglide/runtime";
 import { Providers } from "@/app/providers";
-
-const arimo = Arimo({ 
-  subsets: ["latin"], 
-  display: 'swap',
-  variable: '--font-arimo',
-});
-
-const basement = localFont({ 
-  src: '../fonts/BasementGrotesque.otf',  
-  display: 'swap',
-  variable: '--font-basement', 
-})
+import LanguageProvider from "@/lib/i18n/LanguageProvider";
 
 export async function generateStaticParams() {
-	return availableLanguageTags.map((lang) => ({ lang }))
+  return availableLanguageTags.map((lang) => ({ lang }));
 }
 
 export const metadata: Metadata = {
@@ -32,12 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={languageTag()} className="dark">
-      <body className={`${arimo.className} ${arimo.variable} ${basement.className} ${basement.variable}`}>
-        <Providers>
-            {children}
-        </Providers>
-      </body>
-    </html>
+    <Providers>
+      <LanguageProvider>{children}</LanguageProvider>
+    </Providers>
   );
 }

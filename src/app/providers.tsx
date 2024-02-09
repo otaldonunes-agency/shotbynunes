@@ -1,23 +1,41 @@
-'use client'
+"use client";
 import { GTMProvider } from "@/lib/google/gtm/GoogleTagManager";
 import { ProgressBar } from "@/lib/progressBar/ProgressBar";
 import { SmoothScroll } from "@/lib/smoothScroll/SmoothScroll";
-import LanguageProvider from "@/lib/i18n/LanguageProvider";
-import { NextUIProvider } from '@nextui-org/react'
-import { useRouter } from 'next/navigation'
+import { languageTag } from "@/paraglide/runtime";
+import { NextUIProvider } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
+import { Arimo } from "next/font/google";
+import localFont from "next/font/local";
 
-export function Providers({children}: { children: React.ReactNode }) {
-  const router = useRouter()
+const arimo = Arimo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-arimo",
+});
+
+const basement = localFont({
+  src: "../fonts/BasementGrotesque.otf",
+  display: "swap",
+  variable: "--font-basement",
+});
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
 
   return (
-    <SmoothScroll>
-      <LanguageProvider>
-        <NextUIProvider navigate={router.push}>
-          <ProgressBar showSpinner={false} />
-          {children}
-          <GTMProvider gtmId={process.env.GTM_ID || "GTM-ID"} />
-        </NextUIProvider>
-      </LanguageProvider>
-    </SmoothScroll>
-  )
+    <html lang={languageTag()} className="dark">
+      <body
+        className={`${arimo.className} ${arimo.variable} ${basement.className} ${basement.variable}`}
+      >
+        <SmoothScroll>
+          <NextUIProvider navigate={router.push}>
+            <ProgressBar showSpinner={false} />
+            {children}
+            <GTMProvider gtmId={process.env.GTM_ID || "GTM-ID"} />
+          </NextUIProvider>
+        </SmoothScroll>
+      </body>
+    </html>
+  );
 }
